@@ -100,7 +100,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('images/hero.png');
+  background-image: url('https://unsplash.com/photos/person-holding-pen-near-paper-sv8oOQaUb-o');
   background-size: cover;
   background-position: center;
   color: var(--light);
