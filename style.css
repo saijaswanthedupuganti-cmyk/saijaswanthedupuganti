@@ -1,0 +1,489 @@
+/*
+ * Global Styles for Sai Jaswanth's UX/UI portfolio
+ *
+ * The colour palette blends vibrant blues and pinks with neutral backgrounds to
+ * reflect creativity and professionalism. The layout uses modern flexbox and
+ * grid techniques to ensure responsiveness across devices. A mobile menu is
+ * provided via the hamburger icon and toggled with JavaScript.
+ */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9fb;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* Colour Variables */
+:root {
+  --primary: #6448e8;
+  --secondary: #ff5ea3;
+  --dark: #1d1b31;
+  --light: #ffffff;
+  --muted: #6c6c6c;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--light);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--dark);
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--light);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero .highlight {
+  color: var(--secondary);
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Secondary button variant for resume download */
+.btn.resume {
+  margin-left: 1rem;
+  border: 2px solid var(--secondary);
+  background: transparent;
+  color: #fff;
+}
+
+.btn.resume:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+/* LinkedIn button variant */
+.btn.linkedin {
+  margin-left: 1rem;
+  border: 2px solid #0077b5; /* LinkedIn blue */
+  background: transparent;
+  color: #fff;
+}
+
+.btn.linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+/* Design Approach Section */
+.approach .process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.process-step {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.process-step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.process-step p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.about-item h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-item p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Project link inside cards */
+.project-card .project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-card .project-link:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
+/* Skills */
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-card {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.skill-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e5f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* Certifications */
+/* Certifications grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cert-content h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+
+.cert-content p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Smaller text for certificate dates */
+.cert-content .cert-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Contact */
+/* Contact CTA */
+.contact-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+
+.contact-cta p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.contact-btn {
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+}
+
+.contact-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.contact-info {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #b3b3c0;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 200px;
+    height: calc(100vh - 70px);
+    background: var(--light);
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    transition: right 0.3s ease;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
